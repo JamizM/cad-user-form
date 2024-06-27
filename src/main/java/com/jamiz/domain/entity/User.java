@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigInteger;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,6 +14,6 @@ import lombok.Setter;
 public class User {
     private Long id;
     private String nome;
-    private Integer telefone;
+    private String telefone;
     private String senha;
 }
