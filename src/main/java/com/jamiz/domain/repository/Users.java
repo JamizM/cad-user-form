@@ -31,7 +31,9 @@ public class Users {
 
     public Long excluirUsuario(Long id){
         String sql = "DELETE FROM tb_user WHERE id_user = ?";
+        String sqlOrganizarId = "ALTER SEQUENCE tb_user_id_user_seq RESTART WITH 1;";
         try{
+            PreparedStatement preparadorArrrumarId = conn.prepareStatement(sqlOrganizarId);
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.setLong(1, id);
 
@@ -41,6 +43,7 @@ public class Users {
             }
 
             preparador.execute();
+            preparadorArrrumarId.execute();
             preparador.close();
             System.out.println("usuario deletado com sucesso");
         } catch (SQLException e){
@@ -49,48 +52,51 @@ public class Users {
         return id;
     }
 
-    public void alterarUsuario(String nome, String telefone, Long id){
-        String sql = "UPDATE tb_user SET nome = ?, telefone = ? WHERE id = ?";
+    public boolean alterarUsuario(String nome, String telefone, Long id){
+        String sql = "UPDATE tb_user SET nome = ?, telefone = ? WHERE id_user = ?";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
-            preparador.setString(1, nome); //substitui a primeira interrogação do comando sql (nome = ?)
-            preparador.setString(2, telefone); //substitui a segunda itnerrogacao
+            preparador.setString(1, nome);
+            preparador.setString(2, telefone);
             preparador.setLong(3, id);
+
+            ResultSet rs = preparador.executeQuery();
+
+            if (!rs.next()){
+                return false;
+            }
+
             preparador.execute(); //executa consulta sql
             preparador.close();
-            System.out.println("usuario atualzado");
+            System.out.println("usuario atualizado");
 
         } catch (SQLException e ){
             System.out.println("Erro: " + e);
         }
+        return true;
     }
 
     public List<User> buscarTodos(){
-        //usado List<User> para poder agrupar todos os elementos e assim ter uma consulta mais rapida
         String sql = "SELECT * FROM tb_user";
-
-        List<User> lista = new ArrayList<User>();
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
             ResultSet rs = preparador.executeQuery();
 
-            //sem retornar senha, por boa pratica
-            while(rs.next()){
-                User user = new User();
-                user.setId(rs.getLong("id_user"));
-                user.setNome(rs.getString("nome"));
-                user.setTelefone(rs.getString("telefone"));
-
-                lista.add(user); //retorna lista de usuario
-            }
             if (!rs.next()) {
-                System.out.println("Não existem dados no banco para serem exibidos");
+                return null;
+            } else {
+                do {
+                    String colunaId = rs.getString("id_user");
+                    String colunaNome = rs.getString("nome");
+                    String colunaTelefone = rs.getString("telefone");
+                    System.out.printf("colunaId: %s - colunaNome: %s - colunaTelefone: %s%n", colunaId, colunaNome, colunaTelefone);
+                } while(rs.next());
             }
             preparador.close();
         } catch (SQLException e){
             System.out.println("Erro: " + e);
         }
-        return lista;
+        return null;
     }
 
     public void apagarTodos(){
@@ -98,7 +104,7 @@ public class Users {
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.execute();
-            if(!preparador.execute() == false){
+            if(!preparador.execute()){
                 System.out.println("tabela vazia");
             }
             else{

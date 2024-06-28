@@ -19,13 +19,13 @@ public class Test {
                 System.out.println("1 - inserir usuario \n 2 - Excluir Usuario\n 3 - alterar usuario \n 4 - ver todos os usuarios\n 5 - apagar todos os usuarios\n 6 - Sair e Fechar Conexao");
                 int escolha = sc.nextInt();
 
-                if(escolha < 0 || escolha > 5){
+                if(escolha < 0 || escolha > 6){
                     System.out.println("Opções invalidas, Digite opção válida");
                 }
 
                 switch (escolha){
                     case 1:
-                        System.out.println("escreva seu nome, telefone e senha");
+                        System.out.println("escreva seu nome, telefone e senha (nao coloque espacos)");
                         System.out.println("nome: ");
                         String nomeDB = sc.next();
                         System.out.println("telefone: ");
@@ -43,9 +43,12 @@ public class Test {
 
                     case 3:
                         System.out.println("Escreva seu nome e telefone e id para serem trocados");
-                        String nomeTrocadoDB = sc.nextLine();
-                        String telefoneTrocadoDB = sc.nextLine();
+                        System.out.println("Id: ");
                         Long idDBLocalizacao = sc.nextLong();
+                        System.out.println("Nome: ");
+                        String nomeTrocadoDB = sc.next();
+                        System.out.println("Telefone: ");
+                        String telefoneTrocadoDB = sc.next();
                         users.alterarUsuario(nomeTrocadoDB, telefoneTrocadoDB, idDBLocalizacao);
                         break;
 
@@ -62,6 +65,7 @@ public class Test {
                     case 6:
                         formAberto = true;
                         Conexao.fecharConexao(conexao);
+                        sc.close();
                 }
 
             }
