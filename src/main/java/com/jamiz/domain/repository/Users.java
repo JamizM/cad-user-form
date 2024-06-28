@@ -29,18 +29,24 @@ public class Users {
         }
     }
 
-    public void excluirUsuario(Long id){
+    public Long excluirUsuario(Long id){
         String sql = "DELETE FROM tb_user WHERE id_user = ?";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.setLong(1, id);
+
+            int linhasAfetadasDB = preparador.executeUpdate();
+            if(linhasAfetadasDB == 0){
+                return (long) -1;
+            }
+
             preparador.execute();
             preparador.close();
             System.out.println("usuario deletado com sucesso");
-
         } catch (SQLException e){
             System.out.println("Erro: " + e);
         }
+        return id;
     }
 
     public void alterarUsuario(String nome, String telefone, Long id){
@@ -48,7 +54,6 @@ public class Users {
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.setString(1, nome); //substitui a primeira interrogação do comando sql (nome = ?)
-            //pela linha do user.getNome();
             preparador.setString(2, telefone); //substitui a segunda itnerrogacao
             preparador.setLong(3, id);
             preparador.execute(); //executa consulta sql

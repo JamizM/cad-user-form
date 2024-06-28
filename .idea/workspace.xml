@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd548ac5-17e7-425b-932f-8a5afb03333f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" afterDir="false" />
+    <list default="true" id="fd548ac5-17e7-425b-932f-8a5afb03333f" name="Changes" comment="Usuario inserido com sucesso, e fazendo conexao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/controller/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,8 @@
       <workItem from="1719515055597" duration="79000" />
       <workItem from="1719515173896" duration="38000" />
       <workItem from="1719515330878" duration="46000" />
-      <workItem from="1719515387665" duration="3028000" />
+      <workItem from="1719515387665" duration="4656000" />
+      <workItem from="1719526186422" duration="3578000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD: isnerir Usuario, Entidade, Conexao DB Postgree">
       <option name="closed" value="true" />
@@ -106,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719450711568</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Usuario inserido com sucesso, e fazendo conexao">
+      <option name="closed" value="true" />
+      <created>1719524314808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719524314808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD: isnerir Usuario, Entidade, Conexao DB Postgree" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD: isnerir Usuario, Entidade, Conexao DB Postgree" />
+    <MESSAGE value="Usuario inserido com sucesso, e fazendo conexao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Usuario inserido com sucesso, e fazendo conexao" />
   </component>
 </project>
