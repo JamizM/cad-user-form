@@ -1,10 +1,13 @@
 package com.jamiz.domain.Connection;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class Conexao {
 
@@ -13,10 +16,19 @@ public class Conexao {
     private static ResultSet resultSet;
 
     public static Connection getConection(){
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String name = "postgres";
-        String password = "Jhg27@";
 
+        Properties props = new Properties(); //importar classe Properties para carregar o arquivo config.properties
+        try(FileInputStream fis = new FileInputStream("src/main/resources/config.properties")){ //usar FileInputStream para ler o dado do arquivo
+            props.load(fis);
+        } catch (IOException e){
+            System.out.println("erro " + e);
+            return null;
+        }
+        String url = props.getProperty("db.url");
+        String name = props.getProperty("db.user");
+        String password = props.getProperty("db.password");
+
+        //conexao do DB
         try{
             conn = DriverManager.getConnection(url, name, password);
             System.out.println("Database Connected");
