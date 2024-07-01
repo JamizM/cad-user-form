@@ -102,13 +102,16 @@ public class Users {
         String sql = "DELETE FROM tb_user";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
-            preparador.execute();
-            if(!preparador.execute()){
+
+            int linhasAfetadas = preparador.executeUpdate();
+
+            if(linhasAfetadas == 0){
                 System.out.println("tabela vazia");
             }
             else{
-                System.out.println("dados concluidos com sucesso");
+                System.out.println("Usuarios Deletados");
             }
+            preparador.execute();
             preparador.close();
         } catch (SQLException e){
             System.out.println("Erro: " + e);
