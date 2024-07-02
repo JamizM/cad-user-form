@@ -15,7 +15,7 @@ public class Test {
 
         while(formAberto && conexao != null){
             System.out.println("\nDigite os numeros abaixo para escolher o que fazer\n");
-            System.out.println("1 - inserir usuario \n 2 - Excluir Usuario\n 3 - alterar usuario \n 4 - ver todos os usuarios\n 5 - apagar todos os usuarios\n 6 - Sair e Fechar Conexao");
+            System.out.println("1 - Inserir usuario \n 2 - Excluir Usuario\n 3 - Alterar usuario \n 4 - Ver todos os usuarios\n 5 - Apagar todos os usuarios\n 6 - Sair e Fechar Conexao");
             int escolha = sc.nextInt();
 
             if(escolha < 0 || escolha > 6){
@@ -24,11 +24,11 @@ public class Test {
 
             switch (escolha){
                 case 1:
-                    System.out.println("escreva seu nome, telefone e senha (nao coloque espacos)");
+                    System.out.println("Escreva seu nome, telefone e senha (nao coloque espacos)");
                     System.out.println("nome: ");
                     String nomeDB = sc.next();
                     System.out.println("telefone: ");
-                    String telefoneDB = sc.next();
+                    Integer telefoneDB = sc.nextInt();
                     System.out.println("senha: ");
                     String senhaDB = sc.next();
                     users.inserirUsuario(nomeDB, telefoneDB, senhaDB);
@@ -47,7 +47,7 @@ public class Test {
                     System.out.println("Nome: ");
                     String nomeTrocadoDB = sc.next();
                     System.out.println("Telefone: ");
-                    String telefoneTrocadoDB = sc.next();
+                    Integer telefoneTrocadoDB = sc.nextInt();
                     users.alterarUsuario(nomeTrocadoDB, telefoneTrocadoDB, idDBLocalizacao);
                     break;
 

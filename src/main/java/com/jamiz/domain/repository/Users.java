@@ -13,12 +13,12 @@ public class Users {
 
     Connection conn = Conexao.getConection();
 
-    public void inserirUsuario(String nome, String telefone, String senha){
+    public void inserirUsuario(String nome, Integer telefone, String senha){
         String sql = "INSERT INTO tb_user (nome, telefone, senha) VALUES (?, ?, ?)";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql); //prepara pre-comando para colocar usuario em DB
             preparador.setString(1, nome);
-            preparador.setString(2, telefone);
+            preparador.setInt(2, telefone);
             preparador.setString(3, senha);
             preparador.execute();
             preparador.close();
@@ -30,9 +30,7 @@ public class Users {
 
     public Long excluirUsuario(Long id){
         String sql = "DELETE FROM tb_user WHERE id_user = ?";
-        String sqlOrganizarId = "ALTER SEQUENCE tb_user_id_user_seq RESTART WITH 1;";
         try{
-            PreparedStatement preparadorArrrumarId = conn.prepareStatement(sqlOrganizarId);
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.setLong(1, id);
 
@@ -42,7 +40,6 @@ public class Users {
             }
 
             preparador.execute();
-            preparadorArrrumarId.execute();
             preparador.close();
             System.out.println("usuario deletado com sucesso");
         } catch (SQLException e){
@@ -51,28 +48,29 @@ public class Users {
         return id;
     }
 
-    public boolean alterarUsuario(String nome, String telefone, Long id){
+    public boolean alterarUsuario(String nome, Integer telefone, Long id){
         String sql = "UPDATE tb_user SET nome = ?, telefone = ? WHERE id_user = ?";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql);
             preparador.setString(1, nome);
-            preparador.setString(2, telefone);
+            preparador.setInt(2, telefone);
             preparador.setLong(3, id);
 
-            ResultSet rs = preparador.executeQuery();
+            int linhasAfetadas = preparador.executeUpdate();
 
-            if (!rs.next()){ //se caso nao tiver dado na tabela
-                return false;
+            if(linhasAfetadas > 0){
+                System.out.println("usuario atualizado");
+                return true;
             }
 
-            preparador.execute(); //executa consulta sql
             preparador.close();
             System.out.println("usuario atualizado");
-
         } catch (SQLException e ){
             System.out.println("Erro: " + e);
         }
-        return true;
+        //erro capturado, como comando insert nao retornada nada, e usamos o ResultSet rs -> rs.next() para ser o cursor que devolve um objeto;
+        //assim apresentando erro
+        return false;
     }
 
     public List<User> buscarTodos(){
@@ -87,8 +85,8 @@ public class Users {
                 do {
                     String colunaId = rs.getString("id_user");
                     String colunaNome = rs.getString("nome");
-                    String colunaTelefone = rs.getString("telefone");
-                    System.out.printf("colunaId: %s - colunaNome: %s - colunaTelefone: %s%n", colunaId, colunaNome, colunaTelefone);
+                    Integer colunaTelefone = rs.getInt("telefone");
+                    System.out.printf("Id: %s - Nome: %s - Telefone: %s%n", colunaId, colunaNome, colunaTelefone);
                 } while(rs.next());
             }
             preparador.close();

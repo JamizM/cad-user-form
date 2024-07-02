@@ -7,7 +7,9 @@
     <list default="true" id="fd548ac5-17e7-425b-932f-8a5afb03333f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +51,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Application.Conexao.executor&quot;: &quot;Run&quot;,
     &quot;Application.Test.executor&quot;: &quot;Run&quot;,
     &quot;Maven.cad-user-form [compile].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -125,7 +127,8 @@
       <workItem from="1719590016670" duration="217000" />
       <workItem from="1719601538687" duration="9261000" />
       <workItem from="1719621628394" duration="1672000" />
-      <workItem from="1719849758191" duration="3573000" />
+      <workItem from="1719849758191" duration="5422000" />
+      <workItem from="1719948007640" duration="5963000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD: isnerir Usuario, Entidade, Conexao DB Postgree">
       <option name="closed" value="true" />
@@ -159,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719622820475</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Estruturando codigo melhor e apagarTodos() melhorado">
+      <option name="closed" value="true" />
+      <created>1719853498079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719853498079</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +181,8 @@
     <MESSAGE value="Usuario inserido com sucesso, e fazendo conexao" />
     <MESSAGE value="Testado: Inserir usuario e deletar usuario" />
     <MESSAGE value="Add: Local Variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: Local Variables" />
+    <MESSAGE value="Estruturando codigo melhor e apagarTodos() melhorado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Estruturando codigo melhor e apagarTodos() melhorado" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cad_user_form$Test.ic" NAME="Test Coverage Results" MODIFIED="1719605063904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
