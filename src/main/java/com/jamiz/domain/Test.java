@@ -24,10 +24,10 @@ public class Test {
 
             switch (escolha){
                 case 1:
-                    System.out.println("Escreva seu nome, telefone e senha (nao coloque espacos)");
+                    System.out.println("Escreva seu nome, telefone e senha (sem espacos)");
                     System.out.println("nome: ");
                     String nomeDB = sc.next();
-                    System.out.println("telefone: ");
+                    System.out.println("telefone: (sem DDD)");
                     Integer telefoneDB = sc.nextInt();
                     System.out.println("senha: ");
                     String senhaDB = sc.next();

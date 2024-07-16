@@ -3,11 +3,14 @@ package com.jamiz.domain.repository;
 import com.jamiz.domain.Connection.Conexao;
 import com.jamiz.domain.entity.User;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.security.MessageDigest;
 
 public class Users {
 
@@ -17,14 +20,29 @@ public class Users {
         String sql = "INSERT INTO tb_user (nome, telefone, senha) VALUES (?, ?, ?)";
         try{
             PreparedStatement preparador = conn.prepareStatement(sql); //prepara pre-comando para colocar usuario em DB
+
+            //criptografia - java.security
+            MessageDigest algoritmoCriptografiaSenha = MessageDigest.getInstance("MD5"); //gera 128 bits
+            byte[] criptografaSenha = algoritmoCriptografiaSenha.digest(senha.getBytes("UTF-8")); //pegamos cada byte e criptografamos
+
+            //passando par String usando append() em cada byte
+            StringBuilder hexString = new StringBuilder();
+            for (byte bytesSenha : criptografaSenha){
+                hexString.append(String.format("%02X", 0xFF & bytesSenha));
+            }
+            String senhaCriptografada = hexString.toString();
+
             preparador.setString(1, nome);
             preparador.setInt(2, telefone);
-            preparador.setString(3, senha);
+            preparador.setString(3, senhaCriptografada);
+
             preparador.execute();
             preparador.close();
             System.out.println("Usuario cadastrado com sucesso");
         } catch (SQLException e){
             System.out.println("Erro: " + e);
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            System.out.println("Erro criptografia: " + e);
         }
     }
 

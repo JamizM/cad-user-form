@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd548ac5-17e7-425b-932f-8a5afb03333f" name="Changes" comment="">
+    <list default="true" id="fd548ac5-17e7-425b-932f-8a5afb03333f" name="Changes" comment="Correcao de bugs + reestruturacao DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jamiz/domain/repository/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +126,10 @@
       <workItem from="1719601538687" duration="9261000" />
       <workItem from="1719621628394" duration="1672000" />
       <workItem from="1719849758191" duration="5422000" />
-      <workItem from="1719948007640" duration="5963000" />
+      <workItem from="1719948007640" duration="7457000" />
+      <workItem from="1720625796578" duration="175000" />
+      <workItem from="1720626015870" duration="6000" />
+      <workItem from="1721147241295" duration="2826000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD: isnerir Usuario, Entidade, Conexao DB Postgree">
       <option name="closed" value="true" />
@@ -170,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719853498079</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Correcao de bugs + reestruturacao DB">
+      <option name="closed" value="true" />
+      <created>1719954340564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719954340564</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +191,8 @@
     <MESSAGE value="Testado: Inserir usuario e deletar usuario" />
     <MESSAGE value="Add: Local Variables" />
     <MESSAGE value="Estruturando codigo melhor e apagarTodos() melhorado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estruturando codigo melhor e apagarTodos() melhorado" />
+    <MESSAGE value="Correcao de bugs + reestruturacao DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcao de bugs + reestruturacao DB" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cad_user_form$Test.ic" NAME="Test Coverage Results" MODIFIED="1719605063904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
