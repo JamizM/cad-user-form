@@ -12,7 +12,7 @@ Projeto com sua finalidade de um sistema de cadastro de usuários
  
 ## Sobre
 
-Projeto desenvolvido para a criação de um sistema de cadastro de usuários (CRUD) usando tecnologias Java, PostgreeSQL, arquivos XML e Git, seguindo os padrões de um sistema para praticar e contribuir com o mercado.
+Projeto desenvolvido para a criação de um sistema de cadastro de usuários (CRUD) usando tecnologias *Java*, *PostgreSQL*, *arquivos XML* e *Git*, seguindo os padrões de um sistema para praticar e contribuir com o mercado.
 
 ## Ferramentas/Conhecimentos Aplicados
 - **JDBC** : Interface para conexão entre aplicação e banco de dados de forma eficaz.
