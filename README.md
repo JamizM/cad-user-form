@@ -30,3 +30,6 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 
 # Navegue até o diretório do projeto
 cd seu-repositorio
+
+#Testar
+Agora teste e aproveite.
