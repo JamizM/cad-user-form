@@ -26,7 +26,7 @@ Instruções para instalar o projeto localmente.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/JamizM/cad-user-form.git
 
 # Navegue até o diretório do projeto
 cd seu-repositorio
